@@ -1,11 +1,11 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import path from 'path'; // <-- Correction : import standard de path
+import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/solutions/abx/', // <-- INDISPENSABLE pour votre sous-dossier !
+    base: '/solutions/abx/', // Indispensable pour votre sous-dossier !
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
@@ -20,5 +20,4 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };
-});
 });
