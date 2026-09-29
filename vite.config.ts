@@ -1,11 +1,11 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import path from '/solutions/abx/';
+import path from 'path'; // <-- Correction : import standard de path
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/solutions/abx/', // Indispensable pour votre sous-dossier !
+    base: '/solutions/abx/', // Indispensable pour votre sous-dossier
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
