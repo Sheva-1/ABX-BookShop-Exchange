@@ -29,10 +29,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       : null;
 
   const conditionLabels: Record<string, string> = {
-    new: 'Neuf sous blister',
-    as_new: 'Comme neuf',
-    good_condition: 'Bon état',
-    fair_condition: 'État moyen (3e main)',
+    new: 'Brand new',
+    as_new: 'Like new',
+    good_condition: 'Good condition',
+    fair_condition: 'Fair (well-read)',
   };
 
   return (
@@ -41,40 +41,40 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div className="relative aspect-[4/3] sm:aspect-[3/2] bg-slate-100 overflow-hidden cursor-pointer" onClick={() => onSelect(listing)}>
         <img
           src={listing.imagesUrls[0] || book.coverImage}
-          alt={book.title}
+          alt={`${book.title} - ${book.educationLevel} ${book.subject} (${conditionLabels[condition]})`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
 
         {/* Video Proof Badge */}
         {hasVideoProof && (
-          <div className="absolute bottom-2 left-2 bg-black/75 backdrop-blur-xs text-white text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1 shadow-xs">
+          <div className="absolute bottom-2 left-2 bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1 shadow-xs">
             <Video className="w-3 h-3 text-emerald-400" />
-            <span>Vidéo Niveau 1</span>
+            <span>Video checked</span>
           </div>
         )}
 
-        {/* Channel Indicator */}
+        {/* Channel Indicator without emojis */}
         <div className="absolute top-2 right-2">
           {isFree && (
             <span className="bg-[#2E7D47] text-white text-[11px] font-bold px-2 py-0.5 rounded-md shadow-xs">
-              🎁 Don Gratuit
+              Free Gift
             </span>
           )}
           {isExchange && (
-            <span className="bg-[#2B8A88] text-white text-[11px] font-bold px-2 py-0.5 rounded-md shadow-xs flex items-center gap-1">
+            <span className="bg-[#2E7D47] text-white text-[11px] font-bold px-2 py-0.5 rounded-md shadow-xs flex items-center gap-1">
               <ArrowRightLeft className="w-3 h-3" />
-              Troc
+              Swap
             </span>
           )}
           {isNew && (
             <span className="bg-slate-900 text-white text-[11px] font-bold px-2 py-0.5 rounded-md shadow-xs">
-              ✨ Neuf B2C
+              Brand New
             </span>
           )}
           {isUsed && savingsPct && savingsPct > 0 && (
             <span className="bg-amber-600 text-white text-[11px] font-bold px-2 py-0.5 rounded-md shadow-xs">
-              -{savingsPct}% économie
+              Save {savingsPct}%
             </span>
           )}
         </div>
@@ -83,9 +83,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       {/* Book Information */}
       <div className="p-3.5 flex-1 flex flex-col justify-between">
         <div>
-          {/* Metadata line without pills (Anti-slop clean typography) */}
+          {/* Metadata line */}
           <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500 mb-1">
-            <span className="font-bold text-[#2B8A88]">{book.educationLevel}</span>
+            <span className="font-bold text-[#2E7D47]">{book.educationLevel}</span>
             <span aria-hidden="true">·</span>
             <span>{book.subject}</span>
             <span aria-hidden="true">·</span>
@@ -95,7 +95,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {/* Book Title */}
           <h3
             onClick={() => onSelect(listing)}
-            className="text-sm font-bold text-[#1C2434] line-clamp-2 hover:text-[#2B8A88] transition-colors cursor-pointer leading-snug"
+            className="text-sm font-bold text-[#1C2434] line-clamp-2 hover:text-[#2E7D47] transition-colors cursor-pointer leading-snug"
           >
             {book.title}
           </h3>
@@ -124,12 +124,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {isFree ? (
               <div>
                 <span className="text-base font-extrabold text-[#2E7D47]">0 FCFA</span>
-                <span className="block text-[10px] text-slate-400">Canal Solidaire</span>
+                <span className="block text-[10px] text-slate-400">School gift</span>
               </div>
             ) : isExchange ? (
               <div>
-                <span className="text-xs font-bold text-[#2B8A88]">Échange direct</span>
-                <span className="block text-[10px] text-slate-400">Frais logistiques min.</span>
+                <span className="text-xs font-bold text-[#2E7D47]">Direct swap</span>
+                <span className="block text-[10px] text-slate-400">Small courier fee</span>
               </div>
             ) : (
               <div>
@@ -140,7 +140,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 </div>
                 {book.officialPrice > price && (
                   <span className="text-[10px] text-slate-400 line-through">
-                    Neuf: {book.officialPrice.toLocaleString()} FCFA
+                    New: {book.officialPrice.toLocaleString()} FCFA
                   </span>
                 )}
               </div>
@@ -153,21 +153,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               onClick={() => onSelect(listing)}
               className="px-3 py-1.5 bg-[#2E7D47] hover:bg-[#25663a] text-white text-xs font-bold rounded-lg transition-colors active:scale-95 shadow-xs"
             >
-              Demander le Don
+              Request book
             </button>
           ) : isExchange ? (
             <button
               onClick={() => onInitiateExchange(listing)}
-              className="px-3 py-1.5 bg-[#2B8A88] hover:bg-[#227573] text-white text-xs font-bold rounded-lg transition-colors active:scale-95 shadow-xs"
+              className="px-3 py-1.5 bg-[#2E7D47] hover:bg-[#25663a] text-white text-xs font-bold rounded-lg transition-colors active:scale-95 shadow-xs"
             >
-              Troc direct
+              Offer swap
             </button>
           ) : (
             <button
               onClick={() => onInitiateBuy(listing)}
               className="px-3 py-1.5 bg-[#1C2434] hover:bg-[#2C384E] text-white text-xs font-bold rounded-lg transition-colors active:scale-95 shadow-xs"
             >
-              Acheter (Séquestre)
+              Buy with escrow
             </button>
           )}
         </div>

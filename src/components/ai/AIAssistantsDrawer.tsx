@@ -116,13 +116,13 @@ Posez-moi une question sur une classe (ex: 6ème, 3ème, 1ère C, Form 4) ou une
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-slate-900/60 backdrop-blur-xs flex justify-end">
+    <div className="fixed inset-0 z-50 overflow-hidden bg-slate-900/60 flex justify-end">
       <div className="w-full max-w-lg bg-white h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-200">
         {/* Drawer Header */}
         <div className="p-4 sm:p-5 bg-[#1C2434] text-white flex items-center justify-between border-b border-white/10">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2E7D47] to-[#2B8A88] flex items-center justify-center text-white shadow-xs">
-              <Sparkles className="w-5 h-5 text-amber-300" />
+            <div className="w-9 h-9 rounded-xl bg-[#2E7D47] flex items-center justify-center text-white shadow-xs">
+              <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
               <h2 className="text-base font-bold">Suite IA Multi-Agents ABX</h2>
@@ -157,7 +157,7 @@ Posez-moi une question sur une classe (ex: 6ème, 3ème, 1ère C, Form 4) ou une
             onClick={() => setActiveTab('vision_inspect')}
             className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-1.5 transition-all ${
               activeTab === 'vision_inspect'
-                ? 'bg-white text-[#2B8A88] font-bold shadow-xs'
+                ? 'bg-white text-[#2E7D47] font-bold shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
@@ -210,7 +210,7 @@ Posez-moi une question sur une classe (ex: 6ème, 3ème, 1ère C, Form 4) ou une
                       <div className="whitespace-pre-line">{msg.text}</div>
                       {msg.savingsTip && (
                         <div className="mt-2.5 pt-2 border-t border-slate-200 text-[11px] text-emerald-800 font-semibold flex items-center gap-1.5">
-                          <span>💡</span>
+                          <span className="font-bold uppercase tracking-wider text-[10px]">Tip:</span>
                           <span>{msg.savingsTip}</span>
                         </div>
                       )}
@@ -251,8 +251,8 @@ Posez-moi une question sur une classe (ex: 6ème, 3ème, 1ère C, Form 4) ou une
           {/* AGENT 2: VISION-INSPECT */}
           {activeTab === 'vision_inspect' && (
             <div className="space-y-4 text-xs">
-              <div className="p-3 bg-teal-50 border border-teal-200 rounded-xl text-teal-950 flex items-start gap-2">
-                <ShieldCheck className="w-4 h-4 text-teal-700 flex-shrink-0 mt-0.5" />
+              <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-950 flex items-start gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5" />
                 <p className="text-[11px] leading-relaxed">
                   <strong>ABX Vision-Inspect</strong> effectue le contrôle automatisé de niveau 1 : détection de dégradations, pages manquantes, traces d'encre et masquage PII / visages.
                 </p>
@@ -267,13 +267,13 @@ Posez-moi une question sur une classe (ex: 6ème, 3ème, 1ère C, Form 4) ou une
                   value={visionNotes}
                   onChange={(e) => setVisionNotes(e.target.value)}
                   placeholder="Ex: Traces d'encre à la page 10, couverture écornée..."
-                  className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-slate-800"
+                  className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-[#2E7D47]"
                 />
 
                 <button
                   onClick={handleRunVisionTest}
                   disabled={visionLoading}
-                  className="w-full py-2.5 px-4 bg-[#2B8A88] hover:bg-[#227573] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2"
+                  className="w-full py-2.5 px-4 bg-[#2E7D47] hover:bg-[#25663a] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2"
                 >
                   <Camera className="w-4 h-4" />
                   <span>{visionLoading ? 'Analyse en cours...' : 'Tester le diagnostic visuel IA'}</span>

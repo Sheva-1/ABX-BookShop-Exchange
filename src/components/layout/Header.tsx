@@ -12,6 +12,8 @@ import {
   Truck,
   Building2,
   ChevronDown,
+  LayoutGrid,
+  ArrowLeftRight,
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -48,11 +50,11 @@ export const Header: React.FC<HeaderProps> = ({
   const [roleDropdownOpen, setRoleDropdownOpen] = React.useState(false);
 
   const rolesList: { role: UserRole; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
-    { role: 'parent', label: 'Parent / Élève', icon: User },
-    { role: 'seller_pro', label: 'Librairie & Éditeur B2C', icon: Building2 },
-    { role: 'agent', label: 'Agent Logistique PWA', icon: Truck },
-    { role: 'school', label: 'École Bénéficiaire', icon: HeartHandshake },
-    { role: 'admin', label: 'Admin ABX (Séquestre)', icon: ShieldAlert },
+    { role: 'parent', label: 'Parent / Student', icon: User },
+    { role: 'seller_pro', label: 'Bookshop & Publisher', icon: Building2 },
+    { role: 'agent', label: 'Delivery Courier', icon: Truck },
+    { role: 'school', label: 'Partner School', icon: HeartHandshake },
+    { role: 'admin', label: 'Admin & Escrow', icon: ShieldAlert },
   ];
 
   return (
@@ -61,16 +63,16 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="bg-[#121824] px-4 py-1.5 text-[11px] text-slate-300 flex items-center justify-between border-b border-white/10">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="font-medium text-emerald-300">Séquestre Actif</span>
+          <span className="font-medium text-emerald-300">Escrow Protected</span>
           <span className="hidden sm:inline text-slate-400">·</span>
           <span className="hidden sm:inline text-slate-300">
-            Fonds 100% consignés via Orange Money, MTN MoMo & CAMPOST
+            Your money stays in escrow until you inspect the books in person
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-[10px] text-slate-400">Réseau Cameroun (3G/4G optimisé)</span>
+          <span className="text-[10px] text-slate-400">Low-data mode enabled</span>
           <span className="text-slate-500">|</span>
-          <span className="text-emerald-300 font-semibold">1 000 FCFA livraison fixe</span>
+          <span className="text-emerald-300 font-semibold">Flat 1,000 FCFA delivery</span>
         </div>
       </div>
 
@@ -91,28 +93,28 @@ export const Header: React.FC<HeaderProps> = ({
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
                 type="text"
-                placeholder="Rechercher par ISBN, titre, classe (ex: 6ème, 3ème)..."
+                placeholder="Search by book title, subject, or class (e.g. 6ème, 3ème)..."
                 value={searchQuery}
                 onChange={(e) => {
                   onSearchChange(e.target.value);
                   if (activeTab !== 'catalog') onNavigateTab('catalog');
                 }}
-                className="w-full pl-9 pr-4 py-2 bg-slate-800/90 text-sm text-white placeholder-slate-400 rounded-xl border border-slate-700 focus:outline-none focus:border-[#2B8A88] focus:ring-1 focus:ring-[#2B8A88] transition-all"
+                className="w-full pl-9 pr-4 py-2 bg-slate-800/90 text-sm text-white placeholder-slate-400 rounded-xl border border-slate-700 focus:outline-none focus:border-[#2E7D47] focus:ring-1 focus:ring-[#2E7D47] transition-all"
               />
             </div>
           </div>
 
           {/* Action Tools & Role Switcher */}
           <div className="flex items-center gap-2">
-            {/* AI Assistant Button */}
+            {/* Book Helper Button */}
             <button
               onClick={onOpenAIDrawer}
-              className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-emerald-600 to-[#2B8A88] hover:from-emerald-500 hover:to-[#227573] text-white text-xs font-bold rounded-xl shadow-sm transition-transform active:scale-95"
-              title="Assistant IA Multi-Agents (Book-Matcher, Vision-Inspect, Mediator)"
+              className="flex items-center gap-1.5 px-3 py-2 bg-[#2E7D47] hover:bg-[#25663a] text-white text-xs font-bold rounded-xl shadow-sm transition-transform active:scale-95"
+              title="Get help matching curriculum books, inspecting damage, or resolving questions"
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-spin-slow" />
-              <span className="hidden sm:inline">Agents IA ABX</span>
-              <span className="sm:hidden">IA</span>
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <span className="hidden sm:inline">Book Helpers</span>
+              <span className="sm:hidden">Help</span>
             </button>
 
             {/* Sell CTA (Desktop) */}
@@ -120,17 +122,17 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={onOpenSellModal}
               className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 bg-[#2E7D47] hover:bg-[#25663a] text-white text-xs font-bold rounded-xl transition-all shadow-sm"
             >
-              <span>+ Vendre / Troc</span>
+              <span>+ Sell or Swap</span>
             </button>
 
             {/* Auth / Login Button */}
             <button
               onClick={onOpenAuthModal}
               className="flex items-center gap-1.5 px-3 py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-xl border border-slate-700 transition-colors shadow-sm"
-              title="Connexion ou Inscription par SMS OTP"
+              title="Sign in or register with phone number"
             >
               <User className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="hidden sm:inline">Connexion</span>
+              <span className="hidden sm:inline">Sign in</span>
             </button>
 
             {/* Role Switcher Menu */}
@@ -157,10 +159,10 @@ export const Header: React.FC<HeaderProps> = ({
                 <div className="absolute right-0 mt-2 w-64 bg-white text-slate-800 rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2">
                   <div className="px-3.5 py-2 border-b border-slate-100">
                     <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                      Changer d'Espace Profil
+                      Switch Role
                     </p>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      Connecté en : <span className="font-bold text-[#1C2434]">{currentProfile.fullName}</span>
+                      Signed in as: <span className="font-bold text-[#1C2434]">{currentProfile.fullName}</span>
                     </p>
                   </div>
                   <div className="py-1">
@@ -205,31 +207,37 @@ export const Header: React.FC<HeaderProps> = ({
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
               type="text"
-              placeholder="Rechercher livre, auteur, classe..."
+              placeholder="Search books, authors, grades..."
               value={searchQuery}
               onChange={(e) => {
                 onSearchChange(e.target.value);
                 if (activeTab !== 'catalog') onNavigateTab('catalog');
               }}
-              className="w-full pl-9 pr-3 py-1.5 bg-slate-800 text-xs text-white placeholder-slate-400 rounded-lg border border-slate-700 focus:outline-none focus:border-[#2B8A88]"
+              className="w-full pl-9 pr-3 py-1.5 bg-slate-800 text-xs text-white placeholder-slate-400 rounded-lg border border-slate-700 focus:outline-none focus:border-[#2E7D47]"
             />
           </div>
         </div>
 
-        {/* 3 Channels Navigation Bar (Occasion C2C, Neuf B2C, Solidaire Dons) */}
+        {/* Channels Navigation Bar */}
         <div className="flex items-center gap-2 mt-2.5 pt-2 border-t border-slate-800 overflow-x-auto no-scrollbar pb-1 text-xs">
           <button
             onClick={() => {
               onChannelChange('all');
               onNavigateTab('catalog');
             }}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap transition-all font-medium ${
+            className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-semibold ${
               activeTab === 'catalog' && activeChannel === 'all'
-                ? 'bg-white text-[#1C2434] font-bold shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                ? 'bg-[#2E7D47] text-white font-bold shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
+            title="Browse all textbooks"
           >
-            Tous les Canaux
+            <LayoutGrid className={`w-3.5 h-3.5 ${
+              activeTab === 'catalog' && activeChannel === 'all'
+                ? 'text-white'
+                : 'text-emerald-400'
+            }`} />
+            <span>All Books</span>
           </button>
 
           <button
@@ -237,14 +245,19 @@ export const Header: React.FC<HeaderProps> = ({
               onChannelChange('used_sale');
               onNavigateTab('catalog');
             }}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-medium ${
+            className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-semibold ${
               activeTab === 'catalog' && activeChannel === 'used_sale'
-                ? 'bg-[#2B8A88] text-white font-bold shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                ? 'bg-[#2E7D47] text-white font-bold shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
+            title="Used books from other families"
           >
-            <BookOpen className="w-3.5 h-3.5 text-teal-300" />
-            <span>Canal Occasion (C2C)</span>
+            <BookOpen className={`w-3.5 h-3.5 ${
+              activeTab === 'catalog' && activeChannel === 'used_sale'
+                ? 'text-white'
+                : 'text-emerald-400'
+            }`} />
+            <span>Used</span>
           </button>
 
           <button
@@ -252,13 +265,19 @@ export const Header: React.FC<HeaderProps> = ({
               onChannelChange('exchange');
               onNavigateTab('catalog');
             }}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-medium ${
+            className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-semibold ${
               activeTab === 'catalog' && activeChannel === 'exchange'
-                ? 'bg-[#2B8A88] text-white font-bold shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                ? 'bg-[#2E7D47] text-white font-bold shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
+            title="Direct book-for-book trades"
           >
-            <span>🔄 Troc Livre / Livre</span>
+            <ArrowLeftRight className={`w-3.5 h-3.5 ${
+              activeTab === 'catalog' && activeChannel === 'exchange'
+                ? 'text-white'
+                : 'text-emerald-400'
+            }`} />
+            <span>Swap</span>
           </button>
 
           <button
@@ -266,14 +285,19 @@ export const Header: React.FC<HeaderProps> = ({
               onChannelChange('new_sale');
               onNavigateTab('catalog');
             }}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-medium ${
+            className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-semibold ${
               activeTab === 'catalog' && activeChannel === 'new_sale'
-                ? 'bg-white text-[#1C2434] font-bold shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                ? 'bg-[#2E7D47] text-white font-bold shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
+            title="Brand-new books from verified bookshops"
           >
-            <ShoppingBag className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Canal Neuf (Librairies B2C)</span>
+            <ShoppingBag className={`w-3.5 h-3.5 ${
+              activeTab === 'catalog' && activeChannel === 'new_sale'
+                ? 'text-white'
+                : 'text-emerald-400'
+            }`} />
+            <span>New</span>
           </button>
 
           <button
@@ -281,14 +305,19 @@ export const Header: React.FC<HeaderProps> = ({
               onChannelChange('donation');
               onNavigateTab('schools_hub');
             }}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-medium ${
+            className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 transition-all font-semibold ${
               activeTab === 'schools_hub' || activeChannel === 'donation'
                 ? 'bg-[#2E7D47] text-white font-bold shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
             }`}
+            title="School donations for rural classrooms"
           >
-            <HeartHandshake className="w-3.5 h-3.5 text-emerald-300" />
-            <span>Canal Solidaire & Dons</span>
+            <HeartHandshake className={`w-3.5 h-3.5 ${
+              activeTab === 'schools_hub' || activeChannel === 'donation'
+                ? 'text-white'
+                : 'text-emerald-400'
+            }`} />
+            <span>Donate</span>
           </button>
 
           {/* Quick tab for orders tracking */}

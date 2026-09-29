@@ -18,7 +18,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   ordersBadgeCount = 0,
 }) => {
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 px-3 py-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
       <div className="flex items-center justify-around relative h-14">
         {/* Tab 1: Catalogue */}
         <button
@@ -28,10 +28,10 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           }`}
         >
           <BookOpen className="w-5 h-5 mb-0.5" />
-          <span className="text-[10px] font-semibold">Accueil</span>
+          <span className="text-[10px] font-semibold">Home</span>
         </button>
 
-        {/* Tab 2: Suivi Séquestre */}
+        {/* Tab 2: Orders */}
         <button
           onClick={() => onNavigateTab('orders_track')}
           className={`flex flex-col items-center justify-center w-14 h-full relative transition-colors active:scale-95 ${
@@ -39,26 +39,26 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           }`}
         >
           <PackageCheck className="w-5 h-5 mb-0.5" />
-          <span className="text-[10px] font-semibold">Suivi</span>
+          <span className="text-[10px] font-semibold">Orders</span>
           {ordersBadgeCount > 0 && (
-            <span className="absolute top-1 right-2 w-4 h-4 bg-emerald-600 text-white text-[9px] font-extrabold rounded-full flex items-center justify-center">
+            <span className="absolute top-1 right-2 w-4 h-4 bg-[#2E7D47] text-white text-[9px] font-extrabold rounded-full flex items-center justify-center">
               {ordersBadgeCount}
             </span>
           )}
         </button>
 
-        {/* Tab 3: Raised Center Action: + Vendre / Troc */}
+        {/* Tab 3: Raised Center Action: + Sell or Swap */}
         <div className="relative -top-4 flex items-center justify-center">
           <button
             onClick={onOpenSellModal}
-            className="w-13 h-13 rounded-full bg-[#2E7D47] text-white shadow-lg shadow-emerald-900/30 flex flex-col items-center justify-center border-4 border-white active:scale-90 transition-transform"
-            aria-label="Vendre ou échanger un manuel scolaire"
+            className="w-13 h-13 rounded-full bg-[#2E7D47] text-white shadow-md flex flex-col items-center justify-center border-4 border-white active:scale-90 transition-transform"
+            aria-label="List a book for sale or swap"
           >
             <Plus className="w-6 h-6 stroke-[2.5]" />
           </button>
         </div>
 
-        {/* Tab 4: Canal Solidaire & Dons */}
+        {/* Tab 4: Donations */}
         <button
           onClick={() => onNavigateTab('schools_hub')}
           className={`flex flex-col items-center justify-center w-14 h-full transition-colors active:scale-95 ${
@@ -66,19 +66,19 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           }`}
         >
           <HeartHandshake className="w-5 h-5 mb-0.5" />
-          <span className="text-[10px] font-semibold">Dons</span>
+          <span className="text-[10px] font-semibold">Donations</span>
         </button>
 
-        {/* Tab 5: Role context tab (Agent PWA or Admin or Sécurité) */}
+        {/* Tab 5: Role context tab */}
         {currentRole === 'agent' ? (
           <button
             onClick={() => onNavigateTab('agent_pwa')}
             className={`flex flex-col items-center justify-center w-14 h-full transition-colors active:scale-95 ${
-              activeTab === 'agent_pwa' ? 'text-[#2B8A88]' : 'text-slate-500 hover:text-slate-800'
+              activeTab === 'agent_pwa' ? 'text-[#2E7D47]' : 'text-slate-500 hover:text-slate-800'
             }`}
           >
             <Truck className="w-5 h-5 mb-0.5" />
-            <span className="text-[10px] font-semibold">Tournée</span>
+            <span className="text-[10px] font-semibold">Runs</span>
           </button>
         ) : currentRole === 'admin' ? (
           <button
@@ -98,7 +98,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
             <div className="w-5 h-5 rounded-full border border-slate-400 flex items-center justify-center text-[10px] font-bold">
               ✓
             </div>
-            <span className="text-[10px] font-semibold">Séquestre</span>
+            <span className="text-[10px] font-semibold">Escrow</span>
           </button>
         )}
       </div>

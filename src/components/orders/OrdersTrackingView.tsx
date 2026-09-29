@@ -33,7 +33,7 @@ export const OrdersTrackingView: React.FC<OrdersTrackingViewProps> = ({
       {/* Top Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
         <div>
-          <span className="text-xs font-bold text-[#2B8A88] uppercase tracking-wider flex items-center gap-1.5">
+          <span className="text-xs font-bold text-[#2E7D47] uppercase tracking-wider flex items-center gap-1.5">
             <Lock className="w-3.5 h-3.5" />
             Suivi des Fonds Séquestre & Livraisons P2P
           </span>
@@ -58,7 +58,7 @@ export const OrdersTrackingView: React.FC<OrdersTrackingViewProps> = ({
                   onClick={() => setSelectedOrderId(ord.id)}
                   className={`p-4 rounded-xl border transition-all cursor-pointer text-xs space-y-2 ${
                     isSelected
-                      ? 'bg-white border-[#2B8A88] ring-2 ring-[#2B8A88]/20 shadow-md'
+                      ? 'bg-white border-[#2E7D47] ring-2 ring-[#2E7D47]/20 shadow-md'
                       : 'bg-white border-slate-200 hover:border-slate-300 shadow-xs'
                   }`}
                 >
@@ -70,7 +70,7 @@ export const OrdersTrackingView: React.FC<OrdersTrackingViewProps> = ({
                   <div className="flex gap-2.5">
                     <img
                       src={ord.listing.imagesUrls[0] || ord.listing.book.coverImage}
-                      alt={ord.listing.book.title}
+                      alt={`Manuel scolaire commandé : ${ord.listing.book.title} (${ord.listing.book.educationLevel} ${ord.listing.book.subject})`}
                       className="w-10 h-14 object-cover rounded-md flex-shrink-0"
                     />
                     <div className="min-w-0">
@@ -86,7 +86,7 @@ export const OrdersTrackingView: React.FC<OrdersTrackingViewProps> = ({
 
                   <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
                     <span>Payé par : {ord.paymentMethod.replace('_', ' ').toUpperCase()}</span>
-                    <span className="text-[#2B8A88] font-bold">Détails →</span>
+                    <span className="text-[#2E7D47] font-bold">Détails →</span>
                   </div>
                 </div>
               );
@@ -114,8 +114,8 @@ export const OrdersTrackingView: React.FC<OrdersTrackingViewProps> = ({
                   <EscrowBadge status={selectedOrder.status} size="md" showDetails={true} />
                 </div>
 
-                {/* Secret OTP Delivery Code Box for Buyer */}
-                <div className="bg-gradient-to-r from-[#1C2434] to-[#2C384E] text-white p-5 rounded-2xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* Secret OTP Delivery Code Box for Buyer - Flat crisp dark card */}
+                <div className="bg-[#1C2434] text-white p-5 rounded-2xl shadow-sm border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div>
                     <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest block">
                       Code Secret OTP de Réception
@@ -125,8 +125,8 @@ export const OrdersTrackingView: React.FC<OrdersTrackingViewProps> = ({
                     </p>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/20 text-center">
-                    <span className="text-[10px] text-emerald-300 uppercase font-bold block">
+                  <div className="bg-[#242F42] px-5 py-3 rounded-xl border border-slate-700/60 text-center">
+                    <span className="text-[10px] text-emerald-400 uppercase font-bold block">
                       Code à 6 chiffres
                     </span>
                     <div className="font-mono text-3xl font-extrabold tracking-widest text-white mt-0.5">

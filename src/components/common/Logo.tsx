@@ -34,8 +34,8 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
       {/* Emblem SVG mimicking the official ABX Tree, River & Mountain emblem */}
-      <div className={`relative ${iconDimensions} rounded-xl shadow-sm overflow-hidden flex-shrink-0 bg-gradient-to-b from-white via-slate-100 to-slate-200 p-[1.5px] border border-slate-300/80`}>
-        <div className="w-full h-full rounded-[10px] bg-gradient-to-b from-white to-slate-50 relative flex items-center justify-center overflow-hidden">
+      <div className={`relative ${iconDimensions} rounded-xl overflow-hidden flex-shrink-0 bg-white p-[1.5px] border border-slate-200`}>
+        <div className="w-full h-full rounded-[10px] bg-white relative flex items-center justify-center overflow-hidden">
           <svg
             viewBox="0 0 100 100"
             className="w-full h-full filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)]"

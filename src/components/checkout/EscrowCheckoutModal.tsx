@@ -115,7 +115,7 @@ export const EscrowCheckoutModal: React.FC<EscrowCheckoutModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 flex items-center justify-center p-3 sm:p-5">
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 bg-[#1C2434] text-white">
@@ -143,11 +143,11 @@ export const EscrowCheckoutModal: React.FC<EscrowCheckoutModalProps> = ({
             <div className="flex gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200">
               <img
                 src={listing.imagesUrls[0] || book.coverImage}
-                alt={book.title}
+                alt={`Manuel scolaire en commande séquestre : ${book.title} (${book.educationLevel} ${book.subject})`}
                 className="w-16 h-20 object-cover rounded-lg flex-shrink-0"
               />
               <div className="flex-1 min-w-0">
-                <span className="text-[11px] font-bold text-[#2B8A88] uppercase block">
+                <span className="text-[11px] font-bold text-[#2E7D47] uppercase block">
                   {book.educationLevel} · {book.subject}
                 </span>
                 <h4 className="text-sm font-bold text-[#1C2434] truncate mt-0.5">{book.title}</h4>
@@ -192,14 +192,14 @@ export const EscrowCheckoutModal: React.FC<EscrowCheckoutModalProps> = ({
                   placeholder="Ville (ex: Douala)"
                   value={deliveryCity}
                   onChange={(e) => setDeliveryCity(e.target.value)}
-                  className="px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-[#2B8A88]"
+                  className="px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-[#2E7D47]"
                 />
                 <input
                   type="text"
                   placeholder="Quartier / Repère (ex: Akwa)"
                   value={deliveryQuarter}
                   onChange={(e) => setDeliveryQuarter(e.target.value)}
-                  className="px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-[#2B8A88]"
+                  className="px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:outline-none focus:border-[#2E7D47]"
                 />
               </div>
             </div>
@@ -241,12 +241,12 @@ export const EscrowCheckoutModal: React.FC<EscrowCheckoutModalProps> = ({
                   onClick={() => setPaymentMethod('campost')}
                   className={`p-2.5 rounded-xl border text-center transition-all ${
                     paymentMethod === 'campost'
-                      ? 'border-[#2B8A88] bg-teal-50/60 ring-2 ring-[#2B8A88]/30 text-teal-950 font-bold'
+                      ? 'border-[#2E7D47] bg-emerald-50/60 ring-2 ring-[#2E7D47]/30 text-emerald-950 font-bold'
                       : 'border-slate-200 hover:border-slate-300 text-slate-700'
                   }`}
                 >
                   <div className="text-xs font-extrabold">CAMPOST</div>
-                  <div className="text-[10px] text-teal-800">PostPay</div>
+                  <div className="text-[10px] text-emerald-800">PostPay</div>
                 </button>
               </div>
 

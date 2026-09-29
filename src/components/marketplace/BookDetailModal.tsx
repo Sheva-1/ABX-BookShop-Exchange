@@ -52,12 +52,12 @@ export const BookDetailModal: React.FC<BookDetailModalProps> = ({
   const savingsPct = Math.round((savingsAmount / book.officialPrice) * 100);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 flex items-center justify-center p-3 sm:p-5">
       <div className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
         {/* Top Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between px-5 py-3.5 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div className="sticky top-0 z-10 flex items-center justify-between px-5 py-3.5 bg-white border-b border-slate-200">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-[#2B8A88] uppercase tracking-wider">
+            <span className="text-xs font-bold text-[#2E7D47] uppercase tracking-wider">
               {book.educationLevel} · {book.subject}
             </span>
             <span className="text-slate-300">|</span>
@@ -87,7 +87,7 @@ export const BookDetailModal: React.FC<BookDetailModalProps> = ({
                 ) : (
                   <img
                     src={listing.imagesUrls[activeMediaIndex] || book.coverImage}
-                    alt={book.title}
+                    alt={`Inspection visuelle et couverture du manuel scolaire ${book.title} (${book.educationLevel} ${book.subject})`}
                     className="w-full h-full object-cover"
                   />
                 )}
@@ -119,7 +119,11 @@ export const BookDetailModal: React.FC<BookDetailModalProps> = ({
                           : 'border-transparent opacity-70 hover:opacity-100'
                       }`}
                     >
-                      <img src={url} alt={`Vue ${idx + 1}`} className="w-full h-full object-cover" />
+                      <img
+                        src={url}
+                        alt={`Photo de preuve d'état ${idx + 1} du manuel ${book.title}`}
+                        className="w-full h-full object-cover"
+                      />
                     </button>
                   ))}
                 </div>
@@ -212,7 +216,7 @@ export const BookDetailModal: React.FC<BookDetailModalProps> = ({
                   )}
 
                   {isExchange && listing.exchangeTargetBookTitle && (
-                    <div className="p-2.5 rounded-lg bg-teal-50 border border-teal-200 text-xs text-teal-900">
+                    <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
                       <span className="font-bold flex items-center gap-1 mb-0.5">
                         <ArrowRightLeft className="w-3.5 h-3.5" /> Manuel souhaité en échange :
                       </span>
@@ -264,7 +268,7 @@ export const BookDetailModal: React.FC<BookDetailModalProps> = ({
                       onClose();
                       onInitiateExchange(listing);
                     }}
-                    className="flex-1 py-3 px-4 bg-[#2B8A88] hover:bg-[#227573] text-white text-sm font-bold rounded-xl transition-all shadow-md active:scale-98 flex items-center justify-center gap-2"
+                    className="flex-1 py-3 px-4 bg-[#2E7D47] hover:bg-[#25663a] text-white text-sm font-bold rounded-xl transition-all shadow-md active:scale-98 flex items-center justify-center gap-2"
                   >
                     <ArrowRightLeft className="w-4 h-4" />
                     <span>Proposer un troc de manuel</span>

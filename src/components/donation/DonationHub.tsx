@@ -46,35 +46,35 @@ export const DonationHub: React.FC<DonationHubProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 pb-24 md:pb-12 space-y-6">
-      {/* Solidarity Hero Banner */}
-      <div className="rounded-2xl bg-gradient-to-r from-[#1B4D2E] via-[#2E7D47] to-[#1C2434] p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+      {/* Solidarity Hero Banner - Flat & Crisp */}
+      <div className="rounded-2xl bg-[#1C2434] p-6 sm:p-8 text-white shadow-sm border border-slate-800 relative">
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/20 backdrop-blur-xs text-emerald-200 text-xs font-bold mb-3">
-            <HeartHandshake className="w-4 h-4 text-emerald-300" />
-            <span>Canal Solidaire ABX · Don Irréversible de 3ème Main</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#242F42] text-emerald-400 text-xs font-bold mb-3 border border-slate-700/80">
+            <HeartHandshake className="w-4 h-4 text-emerald-400" />
+            <span>School Book Donations · Giving old books a second home</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
-            Offrez une seconde vie à vos livres pour équiper les écoles enclavées
+            Pass along your child's old books to a classroom in need
           </h1>
 
-          <p className="mt-2 text-xs sm:text-sm text-emerald-100 leading-relaxed">
-            Vos anciens manuels scolaires de 3ème main ont encore une valeur inestimable pour les écoliers et collégiens des zones rurales. ABX organise l'enlèvement gratuit et l'acheminement sécurisé avec preuve de réception.
+          <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Even well-worn textbooks are pure gold to kids in rural classrooms. We pick up your donated books from home for free and make sure they reach the right school with photos to prove delivery.
           </p>
 
-          {/* Impact Metrics */}
+          {/* Impact Metrics - Flat solid cards */}
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div className="p-3 bg-white/10 backdrop-blur-xs rounded-xl border border-white/10">
+            <div className="p-3 bg-[#242F42] rounded-xl border border-slate-700/60">
               <span className="text-2xl font-black text-white">{totalDonationsDelivered}</span>
-              <span className="block text-[11px] text-emerald-200">Manuels scolaires distribués</span>
+              <span className="block text-[11px] text-emerald-400 font-medium">Books delivered so far</span>
             </div>
-            <div className="p-3 bg-white/10 backdrop-blur-xs rounded-xl border border-white/10">
+            <div className="p-3 bg-[#242F42] rounded-xl border border-slate-700/60">
               <span className="text-2xl font-black text-white">{totalStudentsSupported}</span>
-              <span className="block text-[11px] text-emerald-200">Élèves soutenus sur le terrain</span>
+              <span className="block text-[11px] text-emerald-400 font-medium">Students supported</span>
             </div>
-            <div className="p-3 bg-white/10 backdrop-blur-xs rounded-xl border border-white/10 col-span-2 sm:col-span-1">
+            <div className="p-3 bg-[#242F42] rounded-xl border border-slate-700/60 col-span-2 sm:col-span-1">
               <span className="text-2xl font-black text-white">100%</span>
-              <span className="block text-[11px] text-emerald-200">Acheminement sans frais donateur</span>
+              <span className="block text-[11px] text-emerald-400 font-medium">Free pickup for donors</span>
             </div>
           </div>
 
@@ -82,10 +82,10 @@ export const DonationHub: React.FC<DonationHubProps> = ({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               onClick={onOpenSellModal}
-              className="px-5 py-2.5 bg-white text-[#1B4D2E] hover:bg-emerald-50 text-xs font-bold rounded-xl transition-transform active:scale-95 shadow-md flex items-center gap-2"
+              className="px-5 py-2.5 bg-[#2E7D47] text-white hover:bg-[#25663a] text-xs font-bold rounded-xl transition-transform active:scale-95 shadow-sm flex items-center gap-2"
             >
-              <Gift className="w-4 h-4 text-[#2E7D47]" />
-              <span>Faire don d'un manuel maintenant</span>
+              <Gift className="w-4 h-4 text-white" />
+              <span>Donate a book today</span>
             </button>
           </div>
         </div>
@@ -95,9 +95,9 @@ export const DonationHub: React.FC<DonationHubProps> = ({
         <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-xl text-emerald-900 text-xs flex items-center gap-3 animate-in fade-in slide-in-from-top-2">
           <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
           <div>
-            <span className="font-bold">Promesse de don enregistrée avec succès !</span>
+            <span className="font-bold">Thank you! We've saved your donation pledge.</span>
             <p className="text-[11px] text-emerald-800">
-              Notre équipe logistique ABX prendra contact pour convenir du ramassage à votre domicile ou point relais.
+              Our delivery team will get in touch to schedule a quick, free doorstep pickup.
             </p>
           </div>
         </div>
@@ -108,8 +108,8 @@ export const DonationHub: React.FC<DonationHubProps> = ({
         {/* Left: Schools List */}
         <div className="lg:col-span-1 space-y-3">
           <h3 className="text-sm font-bold text-[#1C2434] uppercase tracking-wider flex items-center gap-2">
-            <Building className="w-4 h-4 text-[#2B8A88]" />
-            <span>Écoles Partenaires Bénéficiaires</span>
+            <Building className="w-4 h-4 text-[#2E7D47]" />
+            <span>Partner Schools</span>
           </h3>
 
           <div className="space-y-2.5">
@@ -134,13 +134,13 @@ export const DonationHub: React.FC<DonationHubProps> = ({
                       </p>
                     </div>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800">
-                      {school.totalDonationsReceived} reçus
+                      {school.totalDonationsReceived} received
                     </span>
                   </div>
 
                   <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600">
-                    <span>{school.studentCount} élèves scolarisés</span>
-                    <span className="text-[#2E7D47] font-semibold">Voir les besoins →</span>
+                    <span>{school.studentCount} students enrolled</span>
+                    <span className="text-[#2E7D47] font-semibold">View wishlist →</span>
                   </div>
                 </div>
               );
@@ -155,32 +155,32 @@ export const DonationHub: React.FC<DonationHubProps> = ({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
                 <div>
                   <span className="text-xs font-bold text-[#2E7D47] uppercase tracking-wider">
-                    Fiche Établissement
+                    School Profile
                   </span>
                   <h2 className="text-lg font-bold text-[#1C2434]">{selectedSchool.name}</h2>
                   <p className="text-xs text-slate-500 mt-0.5">
-                    Responsable : {selectedSchool.representativeName} · {selectedSchool.contactPhone}
+                    Contact: {selectedSchool.representativeName} · {selectedSchool.contactPhone}
                   </p>
                 </div>
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
-                  <span className="text-xs text-slate-500 block">Effectif</span>
+                  <span className="text-xs text-slate-500 block">Enrollment</span>
                   <span className="text-lg font-black text-[#1C2434]">{selectedSchool.studentCount}</span>
-                  <span className="text-[10px] text-slate-400 block">enfants</span>
+                  <span className="text-[10px] text-slate-400 block">children</span>
                 </div>
               </div>
 
               {/* Impact Story */}
               <div className="p-3.5 bg-emerald-50/60 border border-emerald-200/70 rounded-xl text-xs text-emerald-950">
-                <span className="font-bold block mb-1">Impact terrain vérifié :</span>
+                <span className="font-bold block mb-1">From the headteacher:</span>
                 <p className="italic text-[11px] leading-relaxed text-emerald-900">
-                  « {selectedSchool.impactStory} »
+                  "{selectedSchool.impactStory}"
                 </p>
               </div>
 
               {/* Urgent Textbook Wishlist */}
               <div>
                 <h4 className="text-xs font-bold text-[#1C2434] uppercase tracking-wider mb-2.5">
-                  Besoins urgents de la rentrée pour cette école :
+                  Textbooks this school is currently asking for:
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -196,11 +196,11 @@ export const DonationHub: React.FC<DonationHubProps> = ({
                         <div>
                           <div className="flex justify-between font-bold text-[#1C2434]">
                             <span>{req.subject}</span>
-                            <span className="text-[#2B8A88] font-bold">{req.level}</span>
+                            <span className="text-[#2E7D47] font-bold">{req.level}</span>
                           </div>
                           <div className="mt-1 flex items-center justify-between text-[11px] text-slate-500">
-                            <span>Reçus : {req.quantityReceived} / {req.quantityRequested}</span>
-                            <span className="font-semibold text-amber-700">Il manque {remaining}</span>
+                            <span>Received: {req.quantityReceived} of {req.quantityRequested}</span>
+                            <span className="font-semibold text-amber-700">{remaining} still needed</span>
                           </div>
 
                           {/* Progress bar */}
@@ -217,7 +217,7 @@ export const DonationHub: React.FC<DonationHubProps> = ({
                           className="w-full py-1.5 px-3 bg-[#2E7D47] hover:bg-[#25663a] text-white text-[11px] font-bold rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-xs"
                         >
                           <Gift className="w-3.5 h-3.5" />
-                          <span>Je donne un livre ({req.level})</span>
+                          <span>Pledge this book ({req.level})</span>
                         </button>
                       </div>
                     );
@@ -229,7 +229,7 @@ export const DonationHub: React.FC<DonationHubProps> = ({
               {donationListings.length > 0 && (
                 <div className="pt-4 border-t border-slate-100">
                   <h4 className="text-xs font-bold text-[#1C2434] uppercase tracking-wider mb-2.5">
-                    Manuels donnés en attente d'acheminement :
+                    Donated books waiting for delivery:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {donationListings.map((dl) => (
@@ -240,12 +240,12 @@ export const DonationHub: React.FC<DonationHubProps> = ({
                       >
                         <img
                           src={dl.imagesUrls[0] || dl.book.coverImage}
-                          alt={dl.book.title}
+                          alt={`${dl.book.title} (${dl.book.educationLevel} ${dl.book.subject})`}
                           className="w-12 h-16 object-cover rounded-lg flex-shrink-0"
                         />
                         <div className="min-w-0">
                           <span className="text-[10px] font-bold text-[#2E7D47] block">
-                            Don de {dl.sellerName}
+                            Gift from {dl.sellerName}
                           </span>
                           <h5 className="text-xs font-bold text-[#1C2434] truncate mt-0.5">
                             {dl.book.title}

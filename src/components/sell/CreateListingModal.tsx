@@ -148,7 +148,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 flex items-center justify-center p-3 sm:p-5">
       <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 bg-[#1C2434] text-white">
@@ -178,12 +178,12 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
                 onClick={() => setListingType('used_sale')}
                 className={`p-3 rounded-xl border text-left transition-all ${
                   listingType === 'used_sale'
-                    ? 'border-[#2B8A88] bg-teal-50/60 ring-2 ring-[#2B8A88]/20'
+                    ? 'border-[#2E7D47] bg-emerald-50/60 ring-2 ring-[#2E7D47]/20'
                     : 'border-slate-200 hover:border-slate-300'
                 }`}
               >
                 <div className="flex items-center gap-1.5 text-xs font-bold text-[#1C2434]">
-                  <DollarSign className="w-3.5 h-3.5 text-[#2B8A88]" />
+                  <DollarSign className="w-3.5 h-3.5 text-[#2E7D47]" />
                   <span>Vente Occasion</span>
                 </div>
                 <p className="text-[10px] text-slate-500 mt-1">
@@ -196,12 +196,12 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
                 onClick={() => setListingType('exchange')}
                 className={`p-3 rounded-xl border text-left transition-all ${
                   listingType === 'exchange'
-                    ? 'border-[#2B8A88] bg-teal-50/60 ring-2 ring-[#2B8A88]/20'
+                    ? 'border-[#2E7D47] bg-emerald-50/60 ring-2 ring-[#2E7D47]/20'
                     : 'border-slate-200 hover:border-slate-300'
                 }`}
               >
                 <div className="flex items-center gap-1.5 text-xs font-bold text-[#1C2434]">
-                  <ArrowRightLeft className="w-3.5 h-3.5 text-[#2B8A88]" />
+                  <ArrowRightLeft className="w-3.5 h-3.5 text-[#2E7D47]" />
                   <span>Troc Direct</span>
                 </div>
                 <p className="text-[10px] text-slate-500 mt-1">
@@ -237,7 +237,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
             <select
               value={selectedBookId}
               onChange={(e) => setSelectedBookId(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#2B8A88]"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-800 focus:outline-none focus:border-[#2E7D47]"
             >
               {MOCK_BOOKS.map((b) => (
                 <option key={b.id} value={b.id}>
@@ -304,7 +304,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
                   step="100"
                   value={price}
                   onChange={(e) => setPrice(Number(e.target.value))}
-                  className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-900 focus:outline-none focus:border-[#2B8A88]"
+                  className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-900 focus:outline-none focus:border-[#2E7D47]"
                   required
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-semibold">
@@ -321,8 +321,8 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
           )}
 
           {listingType === 'exchange' && (
-            <div className="p-3.5 bg-teal-50/60 rounded-xl border border-teal-200 space-y-2 text-xs">
-              <label className="block font-bold text-teal-950">
+            <div className="p-3.5 bg-emerald-50/60 rounded-xl border border-emerald-200 space-y-2 text-xs">
+              <label className="block font-bold text-emerald-950">
                 Quel manuel recherchez-vous en échange direct ?
               </label>
               <input
@@ -330,10 +330,10 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
                 placeholder="Ex: Excellence en Mathématiques 4ème ou Sciences 4ème"
                 value={exchangeTarget}
                 onChange={(e) => setExchangeTarget(e.target.value)}
-                className="w-full px-3 py-2 bg-white border border-teal-300 rounded-lg text-slate-800"
+                className="w-full px-3 py-2 bg-white border border-emerald-300 rounded-lg text-slate-800 focus:outline-none focus:border-[#2E7D47]"
                 required
               />
-              <p className="text-[11px] text-teal-800">
+              <p className="text-[11px] text-emerald-800">
                 Frais d'échange forfaitaires partagés : 500 à 1 000 FCFA lors du croisement logistique.
               </p>
             </div>
@@ -374,7 +374,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
               placeholder="Précisez l'état : annotations au crayon, coins cornés, présence du nom de l'élève sur la page de garde..."
               value={conditionDesc}
               onChange={(e) => setConditionDesc(e.target.value)}
-              className="mt-2 w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-[#2B8A88]"
+              className="mt-2 w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-[#2E7D47]"
             />
           </div>
 
@@ -383,7 +383,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-[#1C2434] flex items-center gap-1.5">
-                  <Camera className="w-4 h-4 text-[#2B8A88]" />
+                  <Camera className="w-4 h-4 text-[#2E7D47]" />
                   Contrôle Qualité Niveau 1 (Photos & Vidéo de feuilletage)
                 </span>
                 <p className="text-[11px] text-slate-500">
@@ -400,7 +400,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
 
             {/* Media Upload and preview */}
             <div className="flex flex-wrap items-center gap-3">
-              <label className="cursor-pointer flex flex-col items-center justify-center w-24 h-24 border-2 border-dashed border-slate-300 hover:border-[#2B8A88] bg-white rounded-xl transition-colors">
+              <label className="cursor-pointer flex flex-col items-center justify-center w-24 h-24 border-2 border-dashed border-slate-300 hover:border-[#2E7D47] bg-white rounded-xl transition-colors">
                 <Upload className="w-5 h-5 text-slate-400 mb-1" />
                 <span className="text-[10px] font-semibold text-slate-600">Ajouter photo</span>
                 <input
@@ -441,7 +441,7 @@ export const CreateListingModal: React.FC<CreateListingModalProps> = ({
                 type="button"
                 onClick={handleRunAiInspection}
                 disabled={isAnalyzingAI}
-                className="text-xs font-bold text-[#2B8A88] hover:text-[#227573] flex items-center gap-1.5"
+                className="text-xs font-bold text-[#2E7D47] hover:text-[#25663a] flex items-center gap-1.5"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>

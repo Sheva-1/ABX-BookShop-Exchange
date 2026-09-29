@@ -73,10 +73,10 @@ export async function runBookMatcherChat(
 
 Pour préserver le budget familial de la rentrée scolaire, voici ma recommandation par ordre strict d'économie :
 
-1. 🎁 **Canal Solidaire (0 FCFA)** : Vérifiez si l'un de nos donateurs a déposé un exemplaire revalorisé pour ce niveau.
-2. 🔄 **Canal Échange / Troc** : Si vous avez un manuel de la classe précédente (ex: 5ème ou 4ème), échangez-le directement contre le livre recherché sans débourser le prix fort (frais d'échange modiques de 500 à 1 000 FCFA).
-3. 📚 **Canal Occasion (Séquestre Mobile Money)** : Des annonces vérifiées par inspection vidéo sont disponibles dès 2 400 FCFA (soit jusqu'à 50% de réduction par rapport au prix officiel).
-4. ✨ **Canal Neuf** : Si aucune seconde main n'est disponible, nos librairies partenaires agréées MINESEC livrent l'édition sous blister.`,
+1. **Canal Solidaire (0 FCFA)** : Vérifiez si l'un de nos donateurs a déposé un exemplaire revalorisé pour ce niveau.
+2. **Canal Échange / Troc** : Si vous avez un manuel de la classe précédente (ex: 5ème ou 4ème), échangez-le directement contre le livre recherché sans débourser le prix fort (frais d'échange modiques de 500 à 1 000 FCFA).
+3. **Canal Occasion (Séquestre Mobile Money)** : Des annonces vérifiées par inspection vidéo sont disponibles dès 2 400 FCFA (soit jusqu'à 50% de réduction par rapport au prix officiel).
+4. **Canal Neuf** : Si aucune seconde main n'est disponible, nos librairies partenaires agréées MINESEC livrent l'édition sous blister.`,
     suggestedChannels: ['Canal Solidaire (Dons)', 'Canal Échange (Troc)', 'Canal Occasion', 'Canal Neuf'],
     savingsTip: 'Astuce d’économie : En combinant le troc et le canal d’occasion sur ABX, les familles camerounaises réduisent leur facture de rentrée de plus de 45 000 FCFA par enfant.',
   };

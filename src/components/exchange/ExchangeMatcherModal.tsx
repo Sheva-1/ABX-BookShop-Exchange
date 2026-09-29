@@ -52,15 +52,15 @@ export const ExchangeMatcherModal: React.FC<ExchangeMatcherModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 flex items-center justify-center p-3 sm:p-5">
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 bg-[#2B8A88] text-white">
+        <div className="flex items-center justify-between px-5 py-4 bg-[#2E7D47] text-white">
           <div className="flex items-center gap-2">
-            <ArrowRightLeft className="w-5 h-5 text-emerald-200" />
+            <ArrowRightLeft className="w-5 h-5 text-emerald-100" />
             <div>
               <h3 className="text-base font-bold">Proposition de Troc Direct</h3>
-              <p className="text-[11px] text-teal-100">Échange livre contre livre (0 FCFA d'achat)</p>
+              <p className="text-[11px] text-emerald-100">Échange livre contre livre (0 FCFA d'achat)</p>
             </div>
           </div>
           <button
@@ -81,7 +81,7 @@ export const ExchangeMatcherModal: React.FC<ExchangeMatcherModalProps> = ({
               <div className="flex gap-3">
                 <img
                   src={targetListing.imagesUrls[0] || targetListing.book.coverImage}
-                  alt={targetListing.book.title}
+                  alt={`Manuel scolaire demandé en troc : ${targetListing.book.title} (${targetListing.book.educationLevel} ${targetListing.book.subject})`}
                   className="w-12 h-16 object-cover rounded-lg flex-shrink-0"
                 />
                 <div>
@@ -99,8 +99,8 @@ export const ExchangeMatcherModal: React.FC<ExchangeMatcherModalProps> = ({
             </div>
 
             {/* Swap visual separator */}
-            <div className="flex items-center justify-center my-1 text-[#2B8A88]">
-              <div className="w-8 h-8 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center">
+            <div className="flex items-center justify-center my-1 text-[#2E7D47]">
+              <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center">
                 <ArrowRightLeft className="w-4 h-4" />
               </div>
             </div>
@@ -115,7 +115,7 @@ export const ExchangeMatcherModal: React.FC<ExchangeMatcherModalProps> = ({
                 value={offeredBookTitle}
                 onChange={(e) => setOfferedBookTitle(e.target.value)}
                 placeholder="Ex: Excellence en Mathématiques 5ème ou Français 5ème"
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold text-slate-800 focus:outline-none focus:border-[#2B8A88]"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold text-slate-800 focus:outline-none focus:border-[#2E7D47]"
                 required
               />
 
@@ -149,19 +149,19 @@ export const ExchangeMatcherModal: React.FC<ExchangeMatcherModalProps> = ({
             </div>
 
             {/* Logistics explanation for bilateral swaps */}
-            <div className="p-3 bg-teal-50/70 border border-teal-200 rounded-xl text-xs text-teal-900 space-y-1">
+            <div className="p-3 bg-emerald-50/70 border border-emerald-200 rounded-xl text-xs text-emerald-900 space-y-1">
               <div className="flex items-center gap-1.5 font-bold">
-                <Truck className="w-4 h-4 text-teal-700" />
+                <Truck className="w-4 h-4 text-emerald-700" />
                 <span>Logistique Croisée en Miroir :</span>
               </div>
-              <p className="text-[11px] text-teal-800 leading-snug">
+              <p className="text-[11px] text-emerald-800 leading-snug">
                 Si l'autre parent accepte, un agent logistique ABX prendra votre livre, effectuera le contrôle niveau 2, et remettra simultanément les deux ouvrages avec validation des codes OTP.
               </p>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-[#2B8A88] hover:bg-[#227573] text-white text-xs font-bold rounded-xl transition-all shadow-md active:scale-98 flex items-center justify-center gap-2"
+              className="w-full py-3 px-4 bg-[#2E7D47] hover:bg-[#25663a] text-white text-xs font-bold rounded-xl transition-all shadow-md active:scale-98 flex items-center justify-center gap-2"
             >
               <ArrowRightLeft className="w-4 h-4" />
               <span>Envoyer la Proposition de Troc Direct</span>

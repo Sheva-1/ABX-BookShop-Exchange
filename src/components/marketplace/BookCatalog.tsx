@@ -136,43 +136,47 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 pb-24 md:pb-12">
-      {/* Hero Value Proposition Banner */}
-      <div className="mb-6 rounded-2xl bg-gradient-to-r from-[#1C2434] via-[#2C384E] to-[#121824] p-5 sm:p-7 text-white shadow-md relative overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute -right-10 -bottom-10 w-60 h-60 bg-[#2B8A88]/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-1/4 -top-10 w-48 h-48 bg-[#2E7D47]/20 rounded-full blur-3xl pointer-events-none" />
-
+      {/* Hero Value Proposition Banner - Flat & Crisp with Single Accent Color */}
+      <div className="mb-6 rounded-2xl bg-[#1C2434] p-5 sm:p-7 text-white shadow-sm border border-slate-800 relative">
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-3 border border-emerald-500/30">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-[#242F42] text-emerald-400 text-xs font-semibold mb-3 border border-slate-700/80">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Paiement Séquestre Mobile Money · Contrôle Qualité à 3 Niveaux</span>
+            <span>Protected by Mobile Money escrow · Every book checked before you pay</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
-            Réduisez le coût de la rentrée scolaire au Cameroun
+            Cut the cost of school books in Cameroon
           </h1>
 
           <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-            Achetez d'occasion avec preuve vidéo, échangez vos manuels en troc direct, achetez du neuf chez les libraires agréés ou donnez pour les écoles défavorisées.
+            Buy second-hand books with video proof, swap last year's textbooks directly with another family, pick up brand new ones from approved bookshops, or donate to rural schools.
           </p>
 
-          {/* Quick Pillars */}
+          {/* Quick Pillars - Flat Solid Cards with Single Accent Color */}
           <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
-              <span className="block font-bold text-emerald-400">1. Occasion (C2C)</span>
-              <span className="text-[11px] text-slate-300">Économies de 40% à 60%</span>
+            <div className="bg-[#242F42] border border-slate-700/60 rounded-xl p-2.5">
+              <span className="block font-bold text-emerald-400 text-xs sm:text-[13px] leading-snug">
+                Second-hand books
+              </span>
+              <span className="text-[11px] text-slate-300">Save 40% to 60%</span>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
-              <span className="block font-bold text-teal-300">2. Troc Direct</span>
-              <span className="text-[11px] text-slate-300">Livre contre livre</span>
+            <div className="bg-[#242F42] border border-slate-700/60 rounded-xl p-2.5">
+              <span className="block font-bold text-emerald-400 text-xs sm:text-[13px] leading-snug">
+                Direct swaps
+              </span>
+              <span className="text-[11px] text-slate-300">Trade book for book</span>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
-              <span className="block font-bold text-sky-300">3. Neuf (B2C)</span>
-              <span className="text-[11px] text-slate-300">Prix public MINESEC</span>
+            <div className="bg-[#242F42] border border-slate-700/60 rounded-xl p-2.5">
+              <span className="block font-bold text-emerald-400 text-xs sm:text-[13px] leading-snug">
+                Brand-new books
+              </span>
+              <span className="text-[11px] text-slate-300">Official bookstore prices</span>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
-              <span className="block font-bold text-amber-300">4. Solidaire</span>
-              <span className="text-[11px] text-slate-300">Dons pour écoles rurales</span>
+            <div className="bg-[#242F42] border border-slate-700/60 rounded-xl p-2.5">
+              <span className="block font-bold text-emerald-400 text-xs sm:text-[13px] leading-snug">
+                School donations
+              </span>
+              <span className="text-[11px] text-slate-300">Sent straight to rural schools</span>
             </div>
           </div>
         </div>
@@ -183,7 +187,7 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
         {/* Horizontal Scrollable Class Level Tabs */}
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 border-b border-slate-100">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-wider flex-shrink-0 mr-1">
-            Classe :
+            Grade:
           </span>
           {CURRICULUM_LEVELS.slice(0, 10).map((lvl) => {
             const isSelected = selectedLevel === lvl.id;
@@ -210,7 +214,7 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
             <select
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
-              className="px-3 py-1.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:border-[#2B8A88]"
+              className="px-3 py-1.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:border-[#2E7D47]"
             >
               {SUBJECTS.map((sub) => (
                 <option key={sub} value={sub}>
@@ -223,13 +227,13 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
             <select
               value={selectedCondition}
               onChange={(e) => setSelectedCondition(e.target.value)}
-              className="px-3 py-1.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:border-[#2B8A88]"
+              className="px-3 py-1.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:outline-none focus:border-[#2E7D47]"
             >
-              <option value="all">Tous les états</option>
-              <option value="new">Neuf</option>
-              <option value="as_new">Comme neuf</option>
-              <option value="good_condition">Bon état</option>
-              <option value="fair_condition">État moyen (3e main)</option>
+              <option value="all">All conditions</option>
+              <option value="new">New</option>
+              <option value="as_new">Like new</option>
+              <option value="good_condition">Good condition</option>
+              <option value="fair_condition">Fair condition (well-read)</option>
             </select>
 
             {/* Active filters pill with reset */}
@@ -239,23 +243,23 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
                 className="flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg transition-colors font-semibold"
               >
                 <X className="w-3.5 h-3.5" />
-                <span>Réinitialiser ({activeFiltersCount})</span>
+                <span>Reset filters ({activeFiltersCount})</span>
               </button>
             )}
           </div>
 
           {/* Sort By Selector */}
           <div className="flex items-center gap-2 ml-auto">
-            <span className="text-slate-400 font-medium">Trier par :</span>
+            <span className="text-slate-400 font-medium">Sort by:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-3 py-1.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-semibold focus:outline-none focus:border-[#2B8A88]"
+              className="px-3 py-1.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-semibold focus:outline-none focus:border-[#2E7D47]"
             >
-              <option value="recommended">Pertinence / Recommandé</option>
-              <option value="price_asc">Prix croissant (FCFA)</option>
-              <option value="price_desc">Prix décroissant</option>
-              <option value="savings">Économie maximale</option>
+              <option value="recommended">Recommended</option>
+              <option value="price_asc">Price: low to high</option>
+              <option value="price_desc">Price: high to low</option>
+              <option value="savings">Biggest savings</option>
             </select>
           </div>
         </div>
@@ -265,28 +269,28 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-base font-bold text-[#1C2434]">
-            {filteredListings.length} {filteredListings.length > 1 ? 'manuels disponibles' : 'manuel disponible'}
+            {filteredListings.length} {filteredListings.length === 1 ? 'book available' : 'books available'}
           </h2>
           <p className="text-xs text-slate-500">
             {activeChannel === 'all'
-              ? 'Toutes offres confondues (Occasion, Neuf, Troc et Dons)'
+              ? 'All books (second-hand, new, swap, and donations)'
               : activeChannel === 'used_sale'
-              ? 'Canal Occasion C2C (séquestre 12% ou 8%)'
+              ? 'Used books from other families (checked with video)'
               : activeChannel === 'new_sale'
-              ? 'Canal Neuf B2C (libraires et éditeurs)'
+              ? 'Brand-new books from official bookshops'
               : activeChannel === 'exchange'
-              ? 'Canal Troc (échange direct livre contre livre)'
-              : 'Canal Solidaire (Dons irréversibles pour écoles)'}
+              ? 'Direct swaps (trade book for book with zero markups)'
+              : 'School gifts (free books for rural classrooms)'}
           </p>
         </div>
 
-        {/* Fast Action: Ask Book-Matcher AI */}
+        {/* Fast Action: Ask Book-Matcher */}
         <button
           onClick={onOpenAIDrawer}
-          className="flex items-center gap-1.5 text-xs font-bold text-[#2B8A88] hover:text-[#227573] transition-colors"
+          className="flex items-center gap-1.5 text-xs font-bold text-[#2E7D47] hover:text-[#25663a] transition-colors"
         >
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Conseil Programme Scolaire</span>
+          <span>Need help finding a book?</span>
         </button>
       </div>
 
@@ -309,9 +313,9 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
           <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-3 text-slate-400">
             <BookOpen className="w-6 h-6" />
           </div>
-          <h3 className="text-base font-bold text-[#1C2434]">Aucun manuel trouvé</h3>
+          <h3 className="text-base font-bold text-[#1C2434]">No books found</h3>
           <p className="text-xs text-slate-500 mt-1 max-w-xs mx-auto">
-            Aucun livre ne correspond à vos filtres actuels. Modifiez votre recherche ou utilisez notre assistant IA.
+            Nothing matches what you're looking for right now. Try clearing some filters or searching for another title.
           </p>
 
           <div className="mt-5 flex flex-col sm:flex-row gap-2 justify-center">
@@ -319,14 +323,14 @@ export const BookCatalog: React.FC<BookCatalogProps> = ({
               onClick={resetFilters}
               className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition-colors"
             >
-              Effacer les filtres
+              Clear filters
             </button>
             <button
               onClick={onOpenAIDrawer}
-              className="px-4 py-2 bg-[#2B8A88] hover:bg-[#227573] text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+              className="px-4 py-2 bg-[#2E7D47] hover:bg-[#25663a] text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1.5"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Demander à l'assistant IA</span>
+              <span>Ask our book helper</span>
             </button>
           </div>
         </div>

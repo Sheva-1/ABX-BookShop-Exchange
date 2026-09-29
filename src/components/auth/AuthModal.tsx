@@ -112,7 +112,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 flex items-center justify-center p-3 sm:p-5">
       <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
         <div className="bg-[#1C2434] text-white p-5 flex items-center justify-between">
@@ -340,7 +340,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
         {/* Security badge */}
         <div className="px-5 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-center gap-2 text-[10px] text-slate-500">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#2B8A88]" />
+          <ShieldCheck className="w-3.5 h-3.5 text-[#2E7D47]" />
           <span>Sécurité Supabase Auth (SMS OTP) · Conforme RGPD & Protection PII</span>
         </div>
       </div>

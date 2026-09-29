@@ -3,16 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>ABX — BookShop Exchange</title>
-    <meta name="description" content="Marketplace solidaire et sécurisée pour l'achat, la vente, l'échange et le don de manuels scolaires au Cameroun avec paiement séquestre et contrôle qualité en 3 étapes." />
-    <meta property="og:title" content="ABX — BookShop Exchange" />
-    <meta property="og:description" content="Marketplace solidaire et sécurisée pour l'achat, la vente, l'échange et le don de manuels scolaires au Cameroun avec paiement séquestre et contrôle qualité en 3 étapes." />
+    <title>ABX — School Books Made Affordable</title>
+    <meta name="description" content="Buy, swap, or donate school textbooks in Cameroon. We hold your payment in safe escrow until you inspect every book in person." />
+    <meta property="og:title" content="ABX — School Books Made Affordable" />
+    <meta property="og:description" content="Buy, swap, or donate school textbooks in Cameroon. We hold your payment in safe escrow until you inspect every book in person." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#1C2434" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://abx-exchange.cm/" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics (Tag GA4 Asynchrone) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABXCMR2026"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ABXCMR2026', { anonymize_ip: true });
+    </script>
+
+    <!-- Schema.org JSON-LD LocalBusiness & Marketplace -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://abx-exchange.cm/#business",
+          "name": "ABX (BookShop Exchange)",
+          "alternateName": "ABX Marketplace Scolaire Cameroun",
+          "description": "Marketplace solidaire et sécurisée de manuels scolaires au Cameroun. Vente d'occasion, troc direct, achat de neuf et dons pour écoles défavorisées.",
+          "url": "https://abx-exchange.cm",
+          "logo": "https://abx-exchange.cm/favicon.svg",
+          "telephone": "+237694881230",
+          "email": "contact@abx-exchange.cm",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Boulevard de la Liberté, Immeuble Horizon Akwa",
+            "addressLocality": "Douala",
+            "addressRegion": "Littoral",
+            "postalCode": "BP 1542",
+            "addressCountry": "CM"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 4.051056,
+            "longitude": 9.708535
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "07:30",
+              "closes": "18:30"
+            }
+          ],
+          "priceRange": "500 FCFA - 5500 FCFA",
+          "currenciesAccepted": "XAF",
+          "paymentAccepted": "Mobile Money, MTN MoMo, Orange Money, CAMPOST",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "3200",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://abx-exchange.cm/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Comment le paiement par séquestre protège-t-il mon argent lors d'un achat ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Lorsque vous payez par Orange Money, MTN MoMo ou CAMPOST, les fonds ne sont pas envoyés directement au vendeur. Ils restent verrouillés en toute sécurité sur le compte séquestre de la plateforme ABX jusqu'à vérification physique et validation de votre code secret OTP à 6 chiffres."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Que se passe-t-il si le livre d'occasion reçu ne correspond pas aux photos ou à la vidéo ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Si le manuel comporte des vices cachés non signalés, vous refusez de communiquer votre code OTP à l'agent livreur. L'incident est consigné, le séquestre est suspendu et vous êtes intégralement remboursé."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Comment fonctionne le canal Échange / Troc de manuel direct (0 FCFA) ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le module de troc vous permet de proposer votre ancien manuel de la classe précédente contre le manuel dont votre enfant a besoin cette année, sans débourser le prix d'achat d'un livre neuf."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Où vont les livres donnés dans le Canal Solidaire ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Les dons sont irréversibles et exclusivement acheminés vers nos écoles partenaires situées dans des départements enclavés ou en zones d'éducation prioritaire au Cameroun avec acheminement gratuit pour le donateur."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quelles sont les commissions prélevées par la plateforme ABX ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ABX prélève 12% sur les ventes entre parents d'occasion (C2C), 8% pour les vendeurs indépendants et 7% sur les ventes de livres neufs B2C des librairies partenaires. Les frais d'acheminement sont fixés au forfait unique de 1 000 FCFA partagés par transaction."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://abx-exchange.cm/#website",
+          "url": "https://abx-exchange.cm",
+          "name": "ABX BookShop Exchange",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://abx-exchange.cm/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-500 selection:text-white">
     <div id="root"></div>
